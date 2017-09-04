@@ -6,16 +6,47 @@
     android:background="@drawable/img_background"
     android:focusable="false">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/activity_title_time"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/x120"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/x130"
-        android:focusable="false" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/activity_title_time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x120"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x130"
+            android:focusable="false" />
+
+        <ImageView
+            android:id="@+id/iv_net"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/include"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_marginTop="@dimen/x30"
+            android:focusable="false"
+            android:src="@mipmap/icon_enh" />
+
+        <ImageView
+            android:id="@+id/iv_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/include"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_marginTop="@dimen/x30"
+            android:focusable="false"
+            android:src="@mipmap/icon_wifi"
+            android:visibility="invisible" />
+    </LinearLayout>
+
 
     <com.xiaoxuan.demo.tv.widget.TvZorderLinearLayout
         android:id="@+id/tzl_main"

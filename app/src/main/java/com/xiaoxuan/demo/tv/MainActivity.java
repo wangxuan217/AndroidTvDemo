@@ -1,10 +1,18 @@
 package com.xiaoxuan.demo.tv;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.xiaoxuan.demo.androidtvdemoxx.R;
 import com.xiaoxuan.demo.tv.widget.BorderView;
@@ -39,11 +47,26 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
     // 流光特效
     private FocusBorder mFocusBorder;
     
+    // 有线网络连接图标
+    private ImageView mNetConnectImg;
+    
+    // wifi连接图标
+    private ImageView mWifiImg;
+    
+    // 连接类型 0-wifi 1-net
+    private boolean isNetType;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mNetConnectImg = (ImageView)findViewById(R.id.iv_net);
+        mWifiImg = (ImageView)findViewById(R.id.iv_wifi);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
+        registerReceiver(mReceiver, filter);
         // 实例话流光特效控件
         mFocusBorder = new FocusBorder.Builder().asColor()
             .shadowWidth(TypedValue.COMPLEX_UNIT_DIP, 18f)
@@ -158,4 +181,50 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
             view.stopScroll();
         }
     }
+    
+    private BroadcastReceiver mReceiver = new BroadcastReceiver()
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+            
+            String action = intent.getAction();
+            if (action.equals(ConnectivityManager.CONNECTIVITY_ACTION))
+            {
+                ConnectivityManager connectMgr = (ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connectMgr.getActiveNetworkInfo();
+                if (networkInfo == null || !networkInfo.isConnected())
+                {
+                    // 没有网络
+                    mNetConnectImg.setVisibility(View.INVISIBLE);
+                    isNetType = false;
+                }
+                else
+                {
+                    mNetConnectImg.setVisibility(View.VISIBLE);
+                    isNetType = true;
+                }
+            }
+            // wifi图标
+            else if (action.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION))
+            {
+                NetworkInfo info = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
+                if (info.getState().equals(NetworkInfo.State.DISCONNECTED))
+                {
+                    mWifiImg.setVisibility(View.INVISIBLE);
+                }
+                else if (info.getState().equals(NetworkInfo.State.CONNECTED))
+                {
+                    if (isNetType)
+                    {
+                        mWifiImg.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        mWifiImg.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        }
+    };
 }

@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:customAttr="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_background"
-    android:focusable="false"
-    android:orientation="vertical">
+    android:focusable="false">
 
-    <com.xiaoxuan.demo.tv.widget.ScrollTextView
-        android:id="@+id/sv_message"
-        android:layout_width="match_parent"
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_title_time"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/x120"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/x16"
-        android:focusable="false"
-        customAttr:isHorizontal="true"
-        customAttr:speed="3"
-        customAttr:textColor="#ffffffff"
-        customAttr:textSize="21sp"
-        customAttr:times="567" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/x130"
+        android:focusable="false" />
 
     <com.xiaoxuan.demo.tv.widget.TvZorderLinearLayout
+        android:id="@+id/tzl_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -188,4 +186,18 @@
             </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
         </com.xiaoxuan.demo.tv.widget.TvZorderRelativeLayout>
     </com.xiaoxuan.demo.tv.widget.TvZorderLinearLayout>
-</LinearLayout>
+
+    <com.xiaoxuan.demo.tv.widget.ScrollTextView
+        android:id="@+id/sv_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x120"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/x16"
+        android:focusable="false"
+        customAttr:isHorizontal="true"
+        customAttr:speed="3"
+        customAttr:textColor="#ffffffff"
+        customAttr:textSize="21sp"
+        customAttr:times="567" />
+</RelativeLayout>

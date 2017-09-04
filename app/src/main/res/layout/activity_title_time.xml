@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/x80"
+    android:orientation="horizontal">
+
+    <com.xiaoxuan.demo.tv.widget.DateView
+        android:id="@+id/date_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x40" />
+
+    <View
+        android:layout_width="@dimen/x2"
+        android:layout_height="@dimen/x80"
+        android:layout_marginLeft="@dimen/x10"
+        android:layout_marginTop="@dimen/x8"
+        android:background="@color/white" />
+
+    <com.xiaoxuan.demo.tv.widget.TimeView
+        android:id="@+id/time_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/x10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x62"
+        android:textStyle="bold" />
+
+    <com.xiaoxuan.demo.tv.widget.TimeAPMView
+        android:id="@+id/apm_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x40" />
+
+</LinearLayout>

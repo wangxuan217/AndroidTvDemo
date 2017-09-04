@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:customAttr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background"
+    android:focusable="false"
+    android:orientation="vertical">
+
+    <com.xiaoxuan.demo.tv.widget.ScrollTextView
+        android:id="@+id/sv_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x120"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/x16"
+        android:focusable="false"
+        customAttr:isHorizontal="true"
+        customAttr:speed="3"
+        customAttr:textColor="#ffffffff"
+        customAttr:textSize="21sp"
+        customAttr:times="567" />
+
+    <com.xiaoxuan.demo.tv.widget.TvZorderLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:focusable="false">
+
+        <com.xiaoxuan.demo.tv.widget.TvZorderRelativeLayout
+            android:id="@+id/tv_relativelayout_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|center"
+            android:clipToPadding="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:paddingBottom="@dimen/x80"
+            android:paddingEnd="@dimen/x40"
+            android:paddingStart="@dimen/x40">
+
+            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+                android:id="@+id/rf_1"
+                android:layout_width="@dimen/x420"
+                android:layout_height="@dimen/x560"
+                android:layout_margin="@dimen/x5"
+                android:background="@color/cadetblue"
+                android:focusable="true"
+                android:nextFocusUp="@+id/rf_1">
+
+                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                    android:id="@+id/mt_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/border_down_shape"
+                    android:gravity="center"
+                    android:padding="15px"
+                    android:text="中国"
+                    android:textColor="@color/gold"
+                    android:textSize="15sp" />
+
+            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+
+            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+                android:id="@+id/rf_2"
+                android:layout_width="@dimen/x420"
+                android:layout_height="@dimen/x560"
+                android:layout_margin="@dimen/x5"
+                android:layout_toEndOf="@+id/rf_1"
+                android:background="@color/cadetblue"
+                android:focusable="true"
+                android:nextFocusUp="@+id/rf_2"
+                android:padding="0dp">
+
+                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                    android:id="@+id/mt_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/border_down_shape"
+                    android:gravity="center"
+                    android:padding="@dimen/x15"
+                    android:text="主权神圣不可侵犯"
+                    android:textColor="@color/gold"
+                    android:textSize="15sp" />
+
+            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+
+            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+                android:id="@+id/rf_3"
+                android:layout_width="@dimen/x420"
+                android:layout_height="@dimen/x275"
+                android:layout_margin="@dimen/x5"
+                android:layout_toEndOf="@+id/rf_2"
+                android:background="@color/cadetblue"
+                android:focusable="true"
+                android:nextFocusUp="@+id/rf_3"
+                android:padding="0dp">
+
+                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                    android:id="@+id/mt_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/border_down_shape"
+                    android:gravity="center"
+                    android:padding="@dimen/x15"
+                    android:text="犯我中华者"
+                    android:textColor="@color/gold"
+                    android:textSize="15sp" />
+            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+
+            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+                android:id="@+id/rf_4"
+                android:layout_width="@dimen/x420"
+                android:layout_height="@dimen/x275"
+                android:layout_below="@+id/rf_3"
+                android:layout_margin="@dimen/x5"
+                android:layout_toEndOf="@+id/rf_2"
+                android:background="@color/cadetblue"
+                android:focusable="true"
+                android:padding="0dp">
+
+                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                    android:id="@+id/mt_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/border_down_shape"
+                    android:gravity="center"
+                    android:padding="@dimen/x15"
+                    android:text="虽远必诛"
+                    android:textColor="@color/gold"
+                    android:textSize="15sp" />
+
+            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+
+            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+                android:id="@+id/rf_5"
+                android:layout_width="@dimen/x420"
+                android:layout_height="@dimen/x275"
+                android:layout_margin="@dimen/x5"
+                android:layout_toEndOf="@+id/rf_3"
+                android:background="@color/cadetblue"
+                android:focusable="true"
+                android:nextFocusUp="@+id/rf_5"
+                android:padding="0dp">
+
+                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                    android:id="@+id/mt_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/border_down_shape"
+                    android:gravity="center"
+                    android:padding="@dimen/x15"
+                    android:text="爱国从小事做起"
+                    android:textColor="@color/gold"
+                    android:textSize="15sp" />
+            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+
+            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+                android:id="@+id/rf_6"
+                android:layout_width="@dimen/x420"
+                android:layout_height="@dimen/x275"
+                android:layout_below="@+id/rf_5"
+                android:layout_margin="@dimen/x5"
+                android:layout_toEndOf="@+id/rf_3"
+                android:background="@color/cadetblue"
+                android:focusable="true"
+                android:padding="0dp">
+
+                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                    android:id="@+id/mt_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/border_down_shape"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:padding="@dimen/x15"
+                    android:text="2017.09.04-xiaoxuan 测试滚动字幕效果"
+                    android:textColor="@color/gold"
+                    android:textSize="15sp" />
+
+            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+        </com.xiaoxuan.demo.tv.widget.TvZorderRelativeLayout>
+    </com.xiaoxuan.demo.tv.widget.TvZorderLinearLayout>
+</LinearLayout>

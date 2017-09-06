@@ -1,0 +1,78 @@
+<!-- The main content view -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context="com.xiaoxuan.demo.tv.FullScreenVideoActivity">
+
+
+    <com.xiaoxuan.demo.tv.widget.view.IjkVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:focusable="false" />
+
+
+    <TextView
+        android:id="@+id/toast_text_view"
+        android:layout_width="@dimen/x660"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/x100"
+        android:layout_marginTop="@dimen/x480"
+        android:background="@color/white"
+        android:focusable="false"
+        android:padding="16dp"
+        android:text="温馨提示\n本视频源来自于网络，有可能出现暂时不能播放的情况，请见谅。我们会定期更新视频源，给您一个良好的观看体验！( ^_^ )"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <com.xiaoxuan.demo.tv.widget.view.TvRecyclerView
+        android:id="@+id/videoList"
+        android:layout_width="@dimen/x320"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#000000"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:focusable="false"
+        android:paddingBottom="@dimen/x40"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x30"
+        android:paddingTop="@dimen/x40"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/liveName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="@dimen/x60"
+        android:layout_marginTop="@dimen/x40"
+        android:focusable="false"
+        android:text="香港电影"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_marginBottom="@dimen/x30"
+        android:layout_marginLeft="@dimen/x40"
+        android:focusable="false"
+        android:text="按'菜单'键换台"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <com.open.androidtvwidget.view.MainUpView
+        android:id="@+id/mainUpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</FrameLayout>

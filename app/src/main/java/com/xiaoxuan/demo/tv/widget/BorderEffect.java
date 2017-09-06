@@ -19,6 +19,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 
+import com.xiaoxuan.demo.tv.widget.shimmer.BorderView;
+
 /**
  * 封装放大控件动画
  */

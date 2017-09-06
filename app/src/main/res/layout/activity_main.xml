@@ -48,7 +48,7 @@
     </LinearLayout>
 
 
-    <com.xiaoxuan.demo.tv.widget.TvZorderLinearLayout
+    <com.xiaoxuan.demo.tv.widget.layout.TvZorderLinearLayout
         android:id="@+id/tzl_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,28 +56,38 @@
         android:layout_alignParentTop="true"
         android:focusable="false">
 
-        <com.xiaoxuan.demo.tv.widget.TvZorderRelativeLayout
+        <com.xiaoxuan.demo.tv.widget.layout.TvZorderRelativeLayout
             android:id="@+id/tv_relativelayout_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="left|center"
             android:clipToPadding="false"
             android:focusable="false"
-            android:gravity="center"
+            android:gravity="left|center"
             android:paddingBottom="@dimen/x80"
             android:paddingEnd="@dimen/x40"
             android:paddingStart="@dimen/x40">
 
-            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+            <com.xiaoxuan.demo.tv.widget.view.IjkVideoView
+                android:id="@+id/video_view"
+                android:layout_width="@dimen/x620"
+                android:layout_height="@dimen/x560"
+                android:layout_margin="@dimen/x5"
+                android:layout_gravity="left|center"
+                android:background="@color/black"
+                android:focusable="false" />
+
+            <com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout
                 android:id="@+id/rf_1"
                 android:layout_width="@dimen/x420"
                 android:layout_height="@dimen/x560"
                 android:layout_margin="@dimen/x5"
+                android:layout_toEndOf="@+id/video_view"
                 android:background="@color/cadetblue"
                 android:focusable="true"
                 android:nextFocusUp="@+id/rf_1">
 
-                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                <com.xiaoxuan.demo.tv.widget.view.MarqueeText
                     android:id="@+id/mt_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -89,9 +99,9 @@
                     android:textColor="@color/gold"
                     android:textSize="15sp" />
 
-            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+            </com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout>
 
-            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+            <com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout
                 android:id="@+id/rf_2"
                 android:layout_width="@dimen/x420"
                 android:layout_height="@dimen/x560"
@@ -102,7 +112,7 @@
                 android:nextFocusUp="@+id/rf_2"
                 android:padding="0dp">
 
-                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                <com.xiaoxuan.demo.tv.widget.view.MarqueeText
                     android:id="@+id/mt_2"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/x80"
@@ -114,9 +124,9 @@
                     android:textColor="@color/gold"
                     android:textSize="15sp" />
 
-            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+            </com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout>
 
-            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+            <com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout
                 android:id="@+id/rf_3"
                 android:layout_width="@dimen/x420"
                 android:layout_height="@dimen/x275"
@@ -127,7 +137,7 @@
                 android:nextFocusUp="@+id/rf_3"
                 android:padding="0dp">
 
-                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                <com.xiaoxuan.demo.tv.widget.view.MarqueeText
                     android:id="@+id/mt_3"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/x80"
@@ -138,9 +148,9 @@
                     android:text="犯我中华者"
                     android:textColor="@color/gold"
                     android:textSize="15sp" />
-            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+            </com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout>
 
-            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+            <com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout
                 android:id="@+id/rf_4"
                 android:layout_width="@dimen/x420"
                 android:layout_height="@dimen/x275"
@@ -151,7 +161,7 @@
                 android:focusable="true"
                 android:padding="0dp">
 
-                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                <com.xiaoxuan.demo.tv.widget.view.MarqueeText
                     android:id="@+id/mt_4"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/x80"
@@ -163,9 +173,9 @@
                     android:textColor="@color/gold"
                     android:textSize="15sp" />
 
-            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+            </com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout>
 
-            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+            <com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout
                 android:id="@+id/rf_5"
                 android:layout_width="@dimen/x420"
                 android:layout_height="@dimen/x275"
@@ -176,7 +186,7 @@
                 android:nextFocusUp="@+id/rf_5"
                 android:padding="0dp">
 
-                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                <com.xiaoxuan.demo.tv.widget.view.MarqueeText
                     android:id="@+id/mt_5"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/x80"
@@ -187,9 +197,9 @@
                     android:text="爱国从小事做起"
                     android:textColor="@color/gold"
                     android:textSize="15sp" />
-            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
+            </com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout>
 
-            <com.xiaoxuan.demo.tv.widget.RoundedFrameLayout
+            <com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout
                 android:id="@+id/rf_6"
                 android:layout_width="@dimen/x420"
                 android:layout_height="@dimen/x275"
@@ -200,7 +210,7 @@
                 android:focusable="true"
                 android:padding="0dp">
 
-                <com.xiaoxuan.demo.tv.widget.MarqueeText
+                <com.xiaoxuan.demo.tv.widget.view.MarqueeText
                     android:id="@+id/mt_6"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/x80"
@@ -214,11 +224,11 @@
                     android:textColor="@color/gold"
                     android:textSize="15sp" />
 
-            </com.xiaoxuan.demo.tv.widget.RoundedFrameLayout>
-        </com.xiaoxuan.demo.tv.widget.TvZorderRelativeLayout>
-    </com.xiaoxuan.demo.tv.widget.TvZorderLinearLayout>
+            </com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout>
+        </com.xiaoxuan.demo.tv.widget.layout.TvZorderRelativeLayout>
+    </com.xiaoxuan.demo.tv.widget.layout.TvZorderLinearLayout>
 
-    <com.xiaoxuan.demo.tv.widget.ScrollTextView
+    <com.xiaoxuan.demo.tv.widget.view.ScrollTextView
         android:id="@+id/sv_message"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x120"

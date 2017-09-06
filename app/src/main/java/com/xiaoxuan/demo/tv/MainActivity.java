@@ -15,16 +15,21 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.xiaoxuan.demo.androidtvdemoxx.R;
-import com.xiaoxuan.demo.tv.widget.BorderView;
-import com.xiaoxuan.demo.tv.widget.FocusBorder;
-import com.xiaoxuan.demo.tv.widget.MarqueeText;
-import com.xiaoxuan.demo.tv.widget.RoundedFrameLayout;
-import com.xiaoxuan.demo.tv.widget.ScrollTextView;
+import com.xiaoxuan.demo.tv.widget.shimmer.BorderView;
+import com.xiaoxuan.demo.tv.widget.shimmer.FocusBorder;
+import com.xiaoxuan.demo.tv.widget.view.IjkVideoView;
+import com.xiaoxuan.demo.tv.widget.view.MarqueeText;
+import com.xiaoxuan.demo.tv.widget.layout.RoundedFrameLayout;
+import com.xiaoxuan.demo.tv.widget.view.ScrollTextView;
+
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
+import tv.danmaku.ijk.media.player.misc.ITrackInfo;
 
 /**
  * @author xiaoxuan 2017.9.4 首页
  */
-public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener, FocusBorder.OnFocusCallback
+public class MainActivity extends AppCompatActivity
+    implements View.OnFocusChangeListener, FocusBorder.OnFocusCallback, TracksFragment.ITrackHolder
 {
     // 滚动字幕控件
     private MarqueeText mt1;
@@ -56,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
     // 连接类型 0-wifi 1-net
     private boolean isNetType;
     
+    private IjkVideoView mVideoView;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -63,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         setContentView(R.layout.activity_main);
         mNetConnectImg = (ImageView)findViewById(R.id.iv_net);
         mWifiImg = (ImageView)findViewById(R.id.iv_wifi);
+        mVideoView = (IjkVideoView)findViewById(R.id.video_view);
         IntentFilter filter = new IntentFilter();
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
@@ -112,6 +120,8 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         scrollingView2.setClickable(true);
         scrollingView2.setSpeed(2);
         scrollingView2.setTimes(1314);
+        playVideo(
+            "http://live.gslb.letv.com/gslb?tag=live&stream_id=lb_zxc_720p&tag=live&ext=m3u8&sign=live_tv&platid=10&splatid=1009&format=C1S&expect=1");
     }
     
     @Override
@@ -182,6 +192,26 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         }
     }
     
+    /**
+     * 播放视频
+     *
+     * @param url 直播地址
+     */
+    private void playVideo(String url)
+    {
+        if (url != null)
+        {
+            mVideoView.pause();
+            mVideoView.setVideoPath(url);
+        }
+        else
+        {
+            finish();
+            return;
+        }
+        mVideoView.start();
+    }
+    
     private BroadcastReceiver mReceiver = new BroadcastReceiver()
     {
         @Override
@@ -227,4 +257,59 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
             }
         }
     };
+    
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        
+        if (!mVideoView.isBackgroundPlayEnabled())
+        {
+            mVideoView.stopPlayback();
+            mVideoView.release(true);
+            mVideoView.stopBackgroundPlay();
+        }
+        else
+        {
+            mVideoView.enterBackground();
+        }
+        IjkMediaPlayer.native_profileEnd();
+    }
+    
+    @Override
+    public ITrackInfo[] getTrackInfo()
+    {
+        if (mVideoView == null)
+            return null;
+        
+        return mVideoView.getTrackInfo();
+    }
+    
+    @Override
+    public void selectTrack(int stream)
+    {
+        mVideoView.selectTrack(stream);
+    }
+    
+    @Override
+    public void deselectTrack(int stream)
+    {
+        mVideoView.deselectTrack(stream);
+    }
+    
+    @Override
+    public int getSelectedTrack(int trackType)
+    {
+        if (mVideoView == null)
+            return -1;
+        
+        return mVideoView.getSelectedTrack(trackType);
+    }
+    
+    @Override
+    public void finish()
+    {
+        super.finish();
+        overridePendingTransition(R.anim.activity_up_in, R.anim.activity_up_out);
+    }
 }

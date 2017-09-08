@@ -8,6 +8,6 @@ v1.2版本 监听网络状态的改变，并将网络状态的图标显示出来
 v2.1版本 集成ijkplay播放器，用于直播及点播应用<br>
 群号：257251953 <br>
 友情赞助啦。。。。。
-![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/4C109C4D-B8C8-4E9C-AC18-821F4530A1E4.png)<br>
+![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/zfb.png)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/test.gif)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/1504493486029.jpg)<br>

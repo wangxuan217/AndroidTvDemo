@@ -10,4 +10,3 @@ v2.1版本 集成ijkplay播放器，用于直播及点播应用<br>
 友情赞助啦，感谢各位的支持了<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/zfb.png)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/test.gif)<br>
-![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/1504493486029.jpg)<br>

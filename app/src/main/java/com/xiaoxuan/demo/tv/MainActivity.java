@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -310,6 +311,7 @@ public class MainActivity extends AppCompatActivity
     public void finish()
     {
         super.finish();
+        System.out.println();
         overridePendingTransition(R.anim.activity_up_in, R.anim.activity_up_out);
     }
 }

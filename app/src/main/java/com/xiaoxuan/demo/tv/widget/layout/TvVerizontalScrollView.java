@@ -7,20 +7,20 @@ import android.widget.ScrollView;
 
 import com.xiaoxuan.demo.androidtvdemoxx.R;
 
-public class TvVorizontalScrollView extends ScrollView
+public class TvVerizontalScrollView extends ScrollView
 {
     
-    public TvVorizontalScrollView(Context context)
+    public TvVerizontalScrollView(Context context)
     {
         super(context, null, 0);
     }
     
-    public TvVorizontalScrollView(Context context, AttributeSet attrs)
+    public TvVerizontalScrollView(Context context, AttributeSet attrs)
     {
         super(context, attrs, 0);
     }
     
-    public TvVorizontalScrollView(Context context, AttributeSet attrs, int defStyle)
+    public TvVerizontalScrollView(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
     }

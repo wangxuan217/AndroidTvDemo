@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg_5">
+
+    <com.romainpiel.shimmer.ShimmerTextView
+        android:id="@+id/shimmer_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:gravity="center"
+        android:text="欢迎加入AndroidTV应用开发者qq群 \n群号:257251953"
+        android:textColor="@color/gold"
+        android:textSize="50sp" />
+
+    <com.xiaoxuan.demo.tv.widget.view.CountDownProgress
+        android:id="@+id/countDownProgress"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x100"
+        android:layout_alignParentRight="true"
+        app:cdp_circle_solid_color="#00ffffff"
+        app:cdp_circle_stroke_color="@color/gold"
+        app:cdp_start_degree="270"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+</RelativeLayout>

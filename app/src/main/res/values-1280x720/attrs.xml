@@ -33,6 +33,26 @@
         <attr name="textSize" format="dimension" />
         <attr name="times" format="integer" />
     </declare-styleable>
-
+    <declare-styleable name="CountDownProgress">
+        <!-- 默认圆实心的颜色 -->
+        <attr name="cdp_circle_solid_color" format="color|reference" />
+        <!-- 默认圆边框的颜色 -->
+        <attr name="cdp_circle_stroke_color" format="color|reference" />
+        <!-- 默认圆边框的宽度 -->
+        <attr name="cdp_circle_stroke_width" format="dimension" />
+        <!-- 默认圆的半径 -->
+        <!--<attr name="cdp_circle_radius" format="dimension" />-->
+        <!-- 进度条的颜色 -->
+        <attr name="cdp_progress_color" format="color|reference" />
+        <!-- 进度条的宽度 -->
+        <attr name="cdp_progress_width" format="dimension" />
+        <!-- 文字的颜色 -->
+        <attr name="cdp_text_color" format="color|reference" />
+        <!-- 文字的字体大小 -->
+        <attr name="cdp_text_size" format="dimension" />
+        <attr name="cdp_text" format="string|reference" />
+        <attr name="cdp_count_down_time" format="integer|reference" />
+        <attr name="cdp_start_degree" format="float|reference" />
+    </declare-styleable>
 
 </resources>

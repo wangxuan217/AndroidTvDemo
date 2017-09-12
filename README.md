@@ -12,4 +12,5 @@ v2.2版本 增加欢迎页，欢迎页中包含流光字体特效<br>
 友情赞助啦，感谢各位的支持了<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/zfb.png)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/splash.png)<br>
+![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/page1.png)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/test.gif)<br>

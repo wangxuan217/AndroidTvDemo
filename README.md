@@ -9,8 +9,6 @@ v2.1版本 集成ijkplay播放器，用于直播及点播应用<br>
 v2.1.1版本 BUG 修复水平不能滚动到底的问题<br>
 v2.2版本 增加欢迎页，欢迎页中包含流光字体特效<br>
 群号：257251953 <br>
-友情赞助啦，感谢各位的支持了<br>
-![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/zfb.png)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/splash.png)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/page1.png)<br>
 ![image](https://github.com/Dreamxiaoxuan/AndroidTvDemo/blob/master/效果图/test.gif)<br>
